@@ -1,4 +1,30 @@
- do{
+// 快手去邀好友
+threads.start(function () {
+    while (true) {
+    sleep(2000)
+    if(className("android.view.View").text("立即分享").exists()){
+    id("left_btn").findOne().click()
+    log("快手去邀好友")}
+} 
+})
+//火山去邀请好友
+threads.start(function () {
+    while (true) {
+    sleep(2000)
+    id("a6j").exists()
+    id("a6j").findOne().click()
+    log("火山去邀请好友")
+} 
+})
+threads.start(function () {
+    while (true) {
+    sleep(2000)
+    id("rj").exists()
+    id("rj").findOne().click()
+    log("火山青少年模式")
+} 
+}) 
+do{
     var 时间 = id("xb").findOne()
     log(时间.text())
     if(时间.text() == "宝箱"){
