@@ -1,27 +1,12 @@
-//淘宝轮播
+// 快手去邀好友
 threads.start(function () {
     while (true) {
-        if(id("gold_icon_center").exists()){
-            sleep(2000)
-        if(id("gold_turns_container").exists()){
-            log("轮转中")
-            sleep(3000)
-            }else{
-            log("砸金蛋")
-            sleep(23000)
-            var  砸金蛋 = id("gold_icon_center").findOne()
-            var 砸金蛋x =砸金蛋.bounds().centerX()
-            var 砸金蛋y =砸金蛋.bounds().centerY()
-            // click(砸金蛋x,砸金蛋y)
-            log("砸金蛋"+砸金蛋x,砸金蛋y)
-            home()
-            text("淘宝直播").findOne().click()
-            swipe(random(900,1000),random(1400,1500),random(900,1000),random(1100,400),random(1500,2600))
-            }
-}
-    } 
+    sleep(2000)
+    if(className("android.view.View").text("立即分享").exists()){
+    id("left_btn").findOne().click()
+    log("快手去邀好友")}
+} 
 })
-
 //火山去邀请好友
 threads.start(function () {
     while (true) {
@@ -31,7 +16,14 @@ threads.start(function () {
     log("火山去邀请好友")
 } 
 })
-
+threads.start(function () {
+    while (true) {
+    sleep(2000)
+    id("rj").exists()
+    id("rj").findOne().click()
+    log("火山青少年模式")
+} 
+})
 
 do{
     var 时间 = id("xb").findOne()
@@ -176,7 +168,16 @@ function 刷火山() {
 function 刷快手() {
     home()
     sleep(1000)
-    text("快手极速版").findOne().click()   
+    text("快手极速版").findOne().click()
+    sleep(2000)
+    if(id("title_tv").exists()){
+        sleep(1000)
+        click(60,140)
+        log("宝箱页面返回刷视频")
+        }
+        else{            
+        log("快手刷视频页面")
+        }   
 }
 
 function 刷淘宝() {
